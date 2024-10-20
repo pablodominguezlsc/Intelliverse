@@ -8,7 +8,7 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Ginto+Nord:wght@400;700&display=swap" rel="stylesheet">
-    
+
     <!-- Estilos básicos -->
     <style>
         * {
@@ -17,25 +17,31 @@
             box-sizing: border-box;
         }
 
-        /* Fondo con gradiente */
+        /* Fondo animado */
         body {
             font-family: 'Ginto Nord', sans-serif;
             line-height: 1.6;
+            background: linear-gradient(135deg, #101126, #2d2d5d, #3c3d55);
+            background-size: 400% 400%; /* Aumentar el tamaño del fondo para la animación */
+            animation: gradientAnimation 10s ease infinite; /* Animación del gradiente */
             color: #ffffff;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
             overflow-x: hidden;
-            position: relative;
-            background: linear-gradient(135deg, #101126, #181e30, #101126); /* Gradiente oscuro */
         }
 
-        /* Estilo para el contenedor de partículas */
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
+        /* Animación del gradiente */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         /* Estilos para el banner superior */
@@ -65,8 +71,6 @@
         .main-content {
             padding: 40px;
             flex-grow: 1;
-            position: relative;
-            z-index: 1;
         }
 
         .content-section {
@@ -92,9 +96,9 @@
         }
 
         h1, h2 {
-            font-family: 'Ginto Nord', sans-serif;
+            font-family: 'Ginto Nord', sans-serif; /* Fuente Ginto Nord */
             font-weight: 700;
-            color: #ffffff; /* Asegúrate de que los títulos sean visibles */
+            color: #ffffff;
             margin-bottom: 20px;
             letter-spacing: 1px;
         }
@@ -111,7 +115,7 @@
             font-size: 1.2rem;
             margin-bottom: 20px;
             font-weight: 300;
-            color: #c7c7c7; /* Color claro para el texto */
+            color: #c7c7c7;
         }
 
         footer {
@@ -133,12 +137,15 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Ocultar el menú al hacer scroll */
+        .hide {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
     </style>
 </head>
 <body>
-    <!-- Contenedor para partículas -->
-    <div id="particles-js"></div>
-
     <!-- Banner superior -->
     <nav class="navbar" id="navbar">
         <a href="index.html">Inicio</a>
@@ -170,121 +177,34 @@
         </footer>
     </div>
 
-    <!-- Cargar particles.js desde CDN -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-    <!-- Configuración de particles.js -->
+    <!-- JavaScript para animación de scroll -->
     <script>
-        particlesJS("particles-js", {
-            particles: {
-                number: {
-                    value: 100,
-                    density: {
-                        enable: true,
-                        value_area: 800
-                    }
-                },
-                color: {
-                    value: "#ffffff"
-                },
-                shape: {
-                    type: "circle",
-                    stroke: {
-                        width: 0,
-                        color: "#000000"
-                    },
-                    polygon: {
-                        nb_sides: 5
-                    },
-                    image: {
-                        src: "img/github.svg",
-                        width: 100,
-                        height: 100
-                    }
-                },
-                opacity: {
-                    value: 0.5,
-                    random: false,
-                    anim: {
-                        enable: false,
-                        speed: 1,
-                        opacity_min: 0.1,
-                        sync: false
-                    }
-                },
-                size: {
-                    value: 3,
-                    random: true,
-                    anim: {
-                        enable: false,
-                        speed: 40,
-                        size_min: 0.1,
-                        sync: false
-                    }
-                },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#ffffff",
-                    opacity: 0.4,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 6,
-                    direction: "none",
-                    random: false,
-                    straight: false,
-                    out_mode: "out",
-                    bounce: false,
-                    attract: {
-                        enable: false,
-                        rotateX: 600,
-                        rotateY: 1200
-                    }
+        const navbar = document.getElementById('navbar');
+        let lastScrollTop = 0;
+
+        function handleScroll() {
+            const sections = document.querySelectorAll('.scroll-anim');
+            sections.forEach(section => {
+                const sectionPosition = section.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+
+                if (sectionPosition < screenPosition) {
+                    section.classList.add('visible');
                 }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: {
-                        enable: true,
-                        mode: "grab"
-                    },
-                    onclick: {
-                        enable: true,
-                        mode: "push"
-                    },
-                    resize: true
-                },
-                modes: {
-                    grab: {
-                        distance: 140,
-                        line_linked: {
-                            opacity: 1
-                        }
-                    },
-                    bubble: {
-                        distance: 400,
-                        size: 40,
-                        duration: 2,
-                        opacity: 8,
-                        speed: 3
-                    },
-                    repulse: {
-                        distance: 200,
-                        duration: 0.4
-                    },
-                    push: {
-                        particles_nb: 4
-                    },
-                    remove: {
-                        particles_nb: 2
-                    }
-                }
-            },
-            retina_detect: true
-        });
+            });
+
+            // Ocultar el navbar al hacer scroll hacia abajo
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                navbar.classList.add('hide'); // Agrega la clase para ocultar
+            } else {
+                navbar.classList.remove('hide'); // Elimina la clase para mostrar
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
     </script>
 </body>
 </html>
