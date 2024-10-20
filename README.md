@@ -24,4 +24,4 @@ Bienvenido a **Intelliverse**. Este es un espacio escolar donde comparto la hist
 - Google Fonts
 
 ---
-Puedes abrir el archivo `index.html` [directamente aquí](index).
+Puedes abrir el archivo `index.html` [directamente aquí](index.html).
