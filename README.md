@@ -25,9 +25,4 @@ Bienvenido a **Mi Proyecto**. Este es un espacio donde comparto mi trabajo, cód
 - Google Fonts
 
 ---
-
-## 🚀 Instalación
-
-1. **Clona el repositorio**:
-   ```bash
-   git clone https://github.com/tuusuario/mi-proyecto.git
+Puedes abrir el archivo `index.html` [directamente aquí](index.html).
