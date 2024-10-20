@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mi Página GitHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MiLogo</div>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Bienvenido a mi página</h1>
+            <p>Un espacio donde comparto mis proyectos y mi pasión por el código.</p>
+            <a href="#proyectos" class="btn">Ver Proyectos</a>
+        </div>
+    </section>
+
+    <section id="sobre-mi" class="section">
+        <h2>Sobre mí</h2>
+        <p>Soy un desarrollador apasionado por crear soluciones innovadoras usando las últimas tecnologías.</p>
+    </section>
+
+    <section id="proyectos" class="section">
+        <h2>Mis Proyectos</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Proyecto 1</h3>
+                <p>Descripción breve del proyecto 1.</p>
+            </div>
+            <div class="project-card">
+                <h3>Proyecto 2</h3>
+                <p>Descripción breve del proyecto 2.</p>
+            </div>
+            <div class="project-card">
+                <h3>Proyecto 3</h3>
+                <p>Descripción breve del proyecto 3.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="section">
+        <h2>Contacto</h2>
+        <p>Si deseas contactarme, puedes enviarme un correo a <a href="mailto:correo@ejemplo.com">correo@ejemplo.com</a>.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Mi Página GitHub - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
