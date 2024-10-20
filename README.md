@@ -25,4 +25,4 @@ Bienvenido a **Mi Proyecto**. Este es un espacio donde comparto mi trabajo, cód
 - Google Fonts
 
 ---
-Puedes abrir el archivo `index.html` [directamente aquí](index.html).
+Puedes abrir el archivo `index.html` [directamente aquí](index).
