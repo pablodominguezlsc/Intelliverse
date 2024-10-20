@@ -3,7 +3,7 @@
 
 ## Descripción
 
-Bienvenido a **Mi Proyecto**. Este es un espacio donde comparto mi trabajo, código y proyectos interesantes. Estoy siempre buscando nuevas maneras de mejorar y aprender.
+Bienvenido a **Intelliverse**. Este es un espacio escolar donde comparto la historia de la Inteligencia Artificial y cómo afecta a nuestro día a día.
 
 ---
 
