@@ -1,6 +1,6 @@
 # 🌟 Mi Proyecto en GitHub 🌟
 
-![Demo del Proyecto]([[https://via.placeholder.com/800x400?text=Demo+del+Proyecto](https://share.creavite.co/67155261b23406fceac11016.gif)](https://share.creavite.co/671552e8b23406fceac11017.png))  <!-- Reemplaza con una imagen de tu proyecto -->
+![Demo del Proyecto]([https://via.placeholder.com/800x400?text=Demo+del+Proyecto](https://share.creavite.co/67155261b23406fceac11016.gif)](https://share.creavite.co/671552e8b23406fceac11017.png))  <!-- Reemplaza con una imagen de tu proyecto -->
 
 ## Descripción
 
