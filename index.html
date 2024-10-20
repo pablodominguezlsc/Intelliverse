@@ -57,6 +57,23 @@
             flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
         }
 
+        .content-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .content-section img {
+            max-width: 400px; /* Limitar el tamaño de las imágenes */
+            height: auto;
+            border-radius: 10px;
+            margin: 20px; /* Margen alrededor de la imagen */
+        }
+
+        .content-section.left img {
+            order: -1; /* Mover la imagen a la izquierda */
+        }
+
         h1, h2 {
             font-family: 'Ginto Nord', sans-serif; /* Fuente Ginto Nord */
             font-weight: 700;
@@ -117,24 +134,30 @@
 
     <!-- Contenido principal -->
     <div class="main-content">
-        <div id="bienvenida" class="scroll-anim">
-            <h1>Intelliverse</h1>
-            <p>Bienvenido a Intelliverse, donde exploramos cómo la Inteligencia Artificial está cambiando el mundo. Descubre cómo afecta tu día a día y lo que depara el futuro.</p>
-            <img src="https://via.placeholder.com/800x400" alt="Imagen IA futurista" style="max-width: 100%; height: auto; border-radius: 10px;">
-            <a href="https://github.com/tuusuario" target="_blank">Explora en GitHub</a>
+        <div id="bienvenida" class="scroll-anim content-section right">
+            <img src="https://via.placeholder.com/400x300" alt="Imagen IA futurista">
+            <div>
+                <h1>Intelliverse</h1>
+                <p>Bienvenido a Intelliverse, donde exploramos cómo la Inteligencia Artificial está cambiando el mundo. Descubre cómo afecta tu día a día y lo que depara el futuro.</p>
+                <a href="https://github.com/tuusuario" target="_blank">Explora en GitHub</a>
+            </div>
         </div>
 
-        <div id="vision" class="scroll-anim">
-            <h2>Visión del Futuro</h2>
-            <p>La tecnología avanza rápidamente, desde inteligencia artificial hasta nuevas formas de interacción digital. Estamos aquí para explorar cómo podemos contribuir a su evolución.</p>
-            <img src="https://via.placeholder.com/800x400" alt="Visión futurista" style="max-width: 100%; height: auto; border-radius: 10px;">
+        <div id="vision" class="scroll-anim content-section left">
+            <div>
+                <h2>Visión del Futuro</h2>
+                <p>La tecnología avanza rápidamente, desde inteligencia artificial hasta nuevas formas de interacción digital. Estamos aquí para explorar cómo podemos contribuir a su evolución.</p>
+            </div>
+            <img src="https://via.placeholder.com/400x300" alt="Visión futurista">
         </div>
 
-        <div id="proyectos" class="scroll-anim">
-            <h2>Proyectos de Inteligencia Artificial</h2>
-            <p>En mis proyectos recientes, he trabajado en algoritmos de aprendizaje automático, redes neuronales y procesamiento de lenguaje natural. Estas tecnologías están redefiniendo cómo interactuamos con el mundo digital.</p>
-            <p>Mi objetivo es seguir desarrollando herramientas y aplicaciones que hagan el uso de la IA más accesible para todos.</p>
-            <img src="https://via.placeholder.com/800x400" alt="Proyectos de IA" style="max-width: 100%; height: auto; border-radius: 10px;">
+        <div id="proyectos" class="scroll-anim content-section right">
+            <img src="https://via.placeholder.com/400x300" alt="Proyectos de IA">
+            <div>
+                <h2>Proyectos de Inteligencia Artificial</h2>
+                <p>En mis proyectos recientes, he trabajado en algoritmos de aprendizaje automático, redes neuronales y procesamiento de lenguaje natural. Estas tecnologías están redefiniendo cómo interactuamos con el mundo digital.</p>
+                <p>Mi objetivo es seguir desarrollando herramientas y aplicaciones que hagan el uso de la IA más accesible para todos.</p>
+            </div>
         </div>
 
         <footer>
