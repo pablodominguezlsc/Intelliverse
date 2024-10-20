@@ -70,8 +70,13 @@
             margin: 20px; /* Margen alrededor de la imagen */
         }
 
-        .content-section.left img {
-            order: -1; /* Mover la imagen a la izquierda */
+        /* Clases para alternar la posición de las imágenes */
+        .content-section.right {
+            flex-direction: row; /* Imagen a la derecha */
+        }
+
+        .content-section.left {
+            flex-direction: row-reverse; /* Imagen a la izquierda */
         }
 
         h1, h2 {
