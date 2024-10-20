@@ -6,7 +6,7 @@
     <meta name="description" content="Página personal o proyecto elegante y futurista">
     <title>Intelliverse - Proyecto IA</title>
 
-    <!-- Google Fonts - Reemplazo aproximado a Neue Haas Grotesk -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
     
     <!-- Estilos básicos -->
@@ -20,14 +20,45 @@
         body {
             font-family: 'Roboto', sans-serif;
             line-height: 1.6;
-            background-color: #101126; /* Fondo oscuro con el color solicitado */
-            color: #fff;
+            background-color: #101126; /* Fondo oscuro */
+            color: #ffffff;
+            display: flex;
+        }
+
+        /* Estilos para la barra lateral */
+        .sidebar {
+            width: 200px;
+            background-color: #1e1e2f;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .sidebar a {
+            color: #00d1ff;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            margin-bottom: 10px;
+        }
+
+        .sidebar a:hover {
+            background-color: #00d1ff;
+            color: #101126;
+        }
+
+        /* Contenido principal */
+        .main-content {
+            margin-left: 220px; /* Espacio para la barra lateral */
             padding: 40px;
-            transition: background-color 0.5s ease, color 0.5s ease;
+            width: calc(100% - 220px);
         }
 
         h1, h2 {
-            font-family: 'Roboto', sans-serif;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 20px;
@@ -73,28 +104,20 @@
             text-align: center;
         }
 
-        /* Modo oscuro */
-        .dark-mode {
-            background-color: #f4f4f9;
-            color: #1a1a1a;
-        }
-
-        .dark-mode h1, .dark-mode h2 {
-            color: #333333;
-        }
-
-        .dark-mode p {
-            color: #333333;
-        }
-
-        .dark-mode a {
-            color: #0073e6;
-            border-color: #0073e6;
-        }
-
-        .dark-mode a:hover {
-            background-color: #0073e6;
-            color: #f4f4f9;
+        /* Estilos del botón de modo claro/oscuro */
+        .toggle-mode {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #00d1ff;
+            border: none;
+            color: #101126;
+            font-family: 'Roboto', sans-serif;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            z-index: 10; /* Asegura que el botón esté por encima */
         }
 
         /* Animaciones sutiles */
@@ -109,62 +132,54 @@
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* Botón de modo claro/oscuro */
-        .toggle-mode {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            background-color: #00d1ff;
-            border: none;
-            color: #101126;
-            font-family: 'Roboto', sans-serif;
-            cursor: pointer;
-            border-radius: 30px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .dark-mode .toggle-mode {
-            background-color: #0073e6;
-            color: #fff;
-        }
-
-        /* Imagenes */
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-top: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        img:hover {
-            transform: scale(1.05);
-        }
     </style>
 </head>
 <body>
-    <!-- Botón de cambio de modo -->
-    <button class="toggle-mode">Modo Claro</button>
-
-    <!-- Contenido -->
-    <div class="scroll-anim">
-        <h1>Intelliverse</h1>
-        <p>Bienvenido a Intelliverse, donde exploramos cómo la Inteligencia Artificial está cambiando el mundo. Descubre cómo afecta tu día a día y lo que depara el futuro.</p>
-        <img src="https://via.placeholder.com/800x400" alt="Imagen IA futurista">
-        <a href="https://github.com/tuusuario" target="_blank">Explora en GitHub</a>
+    <!-- Barra lateral -->
+    <div class="sidebar">
+        <h2>Menú</h2>
+        <a href="#bienvenida">Bienvenida</a>
+        <a href="#vision">Visión del Futuro</a>
+        <a href="#proyectos">Proyectos de IA</a>
+        <a href="#articulos">Artículos</a>
+        <a href="#contacto">Contacto</a>
     </div>
 
-    <div class="scroll-anim">
-        <h2>Visión del Futuro</h2>
-        <p>La tecnología avanza rápidamente, desde inteligencia artificial hasta nuevas formas de interacción digital. Estamos aquí para explorar cómo podemos contribuir a su evolución.</p>
-        <img src="https://via.placeholder.com/800x400" alt="Visión futurista">
-    </div>
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <!-- Botón de cambio de modo -->
+        <button class="toggle-mode">Modo Claro</button>
 
-    <footer>
-        &copy; 2024 Tu Nombre | Hecho con ♥ en GitHub Pages
-    </footer>
+        <div id="bienvenida" class="scroll-anim">
+            <h1>Intelliverse</h1>
+            <p>Bienvenido a Intelliverse, donde exploramos cómo la Inteligencia Artificial está cambiando el mundo. Descubre cómo afecta tu día a día y lo que depara el futuro.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Imagen IA futurista" style="max-width: 100%; height: auto; border-radius: 10px;">
+            <a href="https://github.com/tuusuario" target="_blank">Explora en GitHub</a>
+        </div>
+
+        <div id="vision" class="scroll-anim">
+            <h2>Visión del Futuro</h2>
+            <p>La tecnología avanza rápidamente, desde inteligencia artificial hasta nuevas formas de interacción digital. Estamos aquí para explorar cómo podemos contribuir a su evolución.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Visión futurista" style="max-width: 100%; height: auto; border-radius: 10px;">
+        </div>
+
+        <div id="proyectos" class="scroll-anim">
+            <h2>Proyectos de Inteligencia Artificial</h2>
+            <p>En mis proyectos recientes, he trabajado en algoritmos de aprendizaje automático, redes neuronales y procesamiento de lenguaje natural. Estas tecnologías están redefiniendo cómo interactuamos con el mundo digital.</p>
+            <p>Mi objetivo es seguir desarrollando herramientas y aplicaciones que hagan el uso de la IA más accesible para todos.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Proyectos de IA" style="max-width: 100%; height: auto; border-radius: 10px;">
+        </div>
+
+        <div id="articulos" class="scroll-anim">
+            <h2>Últimos Artículos y Publicaciones</h2>
+            <p>Comparto mis aprendizajes y descubrimientos a través de artículos técnicos y publicaciones. Algunos temas que he abordado recientemente incluyen blockchain, el metaverso y la computación cuántica.</p>
+            <p>¡Explora mis últimas publicaciones y mantente actualizado con las tendencias tecnológicas del futuro!</p>
+        </div>
+
+        <footer>
+            &copy; 2024 Tu Nombre | Hecho con ♥ en GitHub Pages
+        </footer>
+    </div>
 
     <!-- JavaScript para animación de scroll y cambio de modo claro/oscuro -->
     <script>
