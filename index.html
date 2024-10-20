@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Página personal o proyecto elegante y futurista">
-    <title>Proyecto Futurista en GitHub</title>
-    
+    <title>Intelliverse - Proyecto IA</title>
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     
     <!-- Estilos básicos -->
     <style>
@@ -18,27 +18,35 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Lato', sans-serif;
             line-height: 1.6;
-            background-color: #2a2f38; /* Fondo azul oscuro grisáceo */
-            color: white;
-            padding: 20px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            background-color: #f4f4f9; /* Fondo claro para modo claro */
+            color: #333;
+            padding: 40px;
+            transition: background-color 0.5s ease, color 0.5s ease;
         }
 
         h1, h2 {
-            font-family: 'Orbitron', sans-serif; /* Fuente futurista */
-            font-weight: 700;
-            color: #00d1ff; /* Color de texto futurista */
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #1a1a1a;
             margin-bottom: 20px;
             letter-spacing: 1px;
         }
 
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
         p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-bottom: 20px;
             font-weight: 300;
-            color: #c7c7c7;
+            color: #666;
         }
 
         a {
@@ -46,16 +54,16 @@
             margin-top: 20px;
             text-decoration: none;
             font-size: 1rem;
-            color: #00d1ff;
-            border: 2px solid #00d1ff;
+            color: #0073e6;
+            border: 2px solid #0073e6;
             padding: 10px 20px;
-            border-radius: 5px;
+            border-radius: 30px;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         a:hover {
-            background-color: #00d1ff;
-            color: #2a2f38; /* Fondo oscuro en el hover */
+            background-color: #0073e6;
+            color: white;
         }
 
         footer {
@@ -65,32 +73,36 @@
             text-align: center;
         }
 
-        /* Estilo para el modo claro */
-        .light-mode {
-            background-color: white;
-            color: #2a2f38;
+        /* Modo oscuro */
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #f4f4f9;
         }
 
-        .light-mode h1, .light-mode h2 {
-            color: #0073e6;
+        .dark-mode h1, .dark-mode h2 {
+            color: #ffffff;
         }
 
-        .light-mode a {
-            color: #0073e6;
-            border-color: #0073e6;
+        .dark-mode p {
+            color: #bdbdbd;
         }
 
-        .light-mode a:hover {
-            background-color: #0073e6;
-            color: white;
+        .dark-mode a {
+            color: #00d1ff;
+            border-color: #00d1ff;
         }
 
-        /* Clases de animación para scroll */
+        .dark-mode a:hover {
+            background-color: #00d1ff;
+            color: #1a1a1a;
+        }
+
+        /* Animaciones sutiles */
         .scroll-anim {
             opacity: 0;
             transform: translateY(50px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-            margin-bottom: 40px; /* Espacio entre secciones */
+            margin-bottom: 40px;
         }
 
         .scroll-anim.visible {
@@ -98,46 +110,55 @@
             transform: translateY(0);
         }
 
-        .scroll-anim.hidden {
-            opacity: 0;
-            transform: translateY(50px);
-        }
-
-        /* Estilos del botón para cambiar de modo */
+        /* Botón de modo claro/oscuro */
         .toggle-mode {
             position: fixed;
             top: 20px;
             right: 20px;
             padding: 10px 20px;
-            background-color: #00d1ff;
+            background-color: #0073e6;
             border: none;
             color: white;
             font-family: 'Poppins', sans-serif;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 30px;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        .light-mode .toggle-mode {
-            background-color: #0073e6;
+        .dark-mode .toggle-mode {
+            background-color: #00d1ff;
         }
+
+        /* Imagenes */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
     </style>
 </head>
 <body>
     <!-- Botón de cambio de modo -->
-    <button class="toggle-mode">Modo Claro</button>
+    <button class="toggle-mode">Modo Oscuro</button>
 
-    <!-- Contenido con estilo futurista -->
+    <!-- Contenido -->
     <div class="scroll-anim">
         <h1>Intelliverse</h1>
-        <p>En este proyecto escolar, os explicaré la historia de la Inteligencia Artificial y cómo afecta a nuestro día a día.</p>
+        <p>Bienvenido a Intelliverse, donde exploramos cómo la Inteligencia Artificial está cambiando el mundo. Descubre cómo afecta tu día a día y lo que depara el futuro.</p>
         <img src="https://via.placeholder.com/800x400" alt="Imagen IA futurista">
         <a href="https://github.com/tuusuario" target="_blank">Explora en GitHub</a>
     </div>
 
     <div class="scroll-anim">
         <h2>Visión del Futuro</h2>
-        <p>El futuro está lleno de posibilidades. Mi objetivo es trabajar en proyectos que contribuyan a la evolución de la tecnología, desde inteligencia artificial hasta nuevas formas de interacción digital. Creo en un mundo donde la tecnología está al servicio de las personas.</p>
+        <p>La tecnología avanza rápidamente, desde inteligencia artificial hasta nuevas formas de interacción digital. Estamos aquí para explorar cómo podemos contribuir a su evolución.</p>
         <img src="https://via.placeholder.com/800x400" alt="Visión futurista">
     </div>
 
@@ -145,9 +166,9 @@
         &copy; 2024 Tu Nombre | Hecho con ♥ en GitHub Pages
     </footer>
 
-    <!-- JavaScript para la animación de scroll y modo oscuro/claro -->
+    <!-- JavaScript para animación de scroll y cambio de modo claro/oscuro -->
     <script>
-        // Función que agrega la clase 'visible' o 'hidden' al hacer scroll
+        // Animación de scroll
         function handleScroll() {
             const sections = document.querySelectorAll('.scroll-anim');
             sections.forEach(section => {
@@ -156,28 +177,19 @@
 
                 if (sectionPosition < screenPosition) {
                     section.classList.add('visible');
-                    section.classList.remove('hidden');
-                } else {
-                    section.classList.remove('visible');
-                    section.classList.add('hidden');
                 }
             });
         }
 
-        // Detectar el evento de scroll
-        window.addEventListener('scroll', handleScroll);
-        window.addEventListener('load', handleScroll);
-
-        // Función para alternar entre modo oscuro y claro
+        // Cambiar entre modo claro y oscuro
         const toggleButton = document.querySelector('.toggle-mode');
         toggleButton.addEventListener('click', function() {
-            document.body.classList.toggle('light-mode');
-            if (document.body.classList.contains('light-mode')) {
-                toggleButton.textContent = 'Modo Oscuro';
-            } else {
-                toggleButton.textContent = 'Modo Claro';
-            }
+            document.body.classList.toggle('dark-mode');
+            toggleButton.textContent = document.body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Oscuro';
         });
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
     </script>
 </body>
 </html>
