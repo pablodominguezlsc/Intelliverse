@@ -29,6 +29,7 @@
             flex-direction: column;
             min-height: 100vh;
             overflow-x: hidden;
+            position: relative; /* Para posicionar las partículas */
         }
 
         /* Animación del gradiente */
@@ -41,6 +42,26 @@
             }
             100% {
                 background-position: 0% 50%;
+            }
+        }
+
+        /* Partículas */
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2); /* Color blanco con opacidad */
+            border-radius: 50%; /* Forma circular */
+            animation: fade 2s infinite; /* Animación de aparición/desaparición */
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 0;
             }
         }
 
@@ -146,6 +167,9 @@
     </style>
 </head>
 <body>
+    <!-- Partículas en el fondo -->
+    <div id="particles-container"></div>
+
     <!-- Banner superior -->
     <nav class="navbar" id="navbar">
         <a href="index.html">Inicio</a>
@@ -177,7 +201,7 @@
         </footer>
     </div>
 
-    <!-- JavaScript para animación de scroll -->
+    <!-- JavaScript para animación de scroll y partículas -->
     <script>
         const navbar = document.getElementById('navbar');
         let lastScrollTop = 0;
@@ -205,6 +229,24 @@
 
         window.addEventListener('scroll', handleScroll);
         window.addEventListener('load', handleScroll);
+
+        // Crear partículas
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles-container');
+            for (let i = 0; i < 100; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                const size = Math.random() * 10 + 5; // Tamaño entre 5 y 15px
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.top = `${Math.random() * window.innerHeight}px`;
+                particle.style.left = `${Math.random() * window.innerWidth}px`;
+                particle.style.animationDelay = `${Math.random() * 2}s`; // Retraso aleatorio para la animación
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        createParticles();
     </script>
 </body>
 </html>
