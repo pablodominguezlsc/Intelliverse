@@ -23,6 +23,7 @@
             background-color: #2a2f38; /* Fondo azul oscuro grisáceo */
             color: white;
             padding: 20px;
+            transition: background-color 0.5s ease, color 0.5s ease;
         }
 
         h1, h2 {
@@ -34,7 +35,7 @@
         }
 
         p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-bottom: 20px;
             font-weight: 300;
             color: #c7c7c7;
@@ -54,7 +55,14 @@
 
         a:hover {
             background-color: #00d1ff;
-            color: #2a2f38; /* Fondo oscuro en el hover */
+            color: #2a2f38;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
         }
 
         footer {
@@ -69,7 +77,7 @@
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-            margin-bottom: 40px; /* Espacio entre secciones */
+            margin-bottom: 40px;
         }
 
         .scroll-anim.visible {
@@ -81,45 +89,97 @@
             opacity: 0;
             transform: translateY(20px);
         }
+
+        /* Estilos para el botón de modo claro/oscuro */
+        .toggle-mode {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #00d1ff;
+            color: #2a2f38;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .toggle-mode.light {
+            background-color: #2a2f38;
+            color: #00d1ff;
+        }
+
+        /* Modo claro */
+        body.light-mode {
+            background-color: white;
+            color: #2a2f38;
+        }
+
+        body.light-mode h1, body.light-mode h2 {
+            color: #2a2f38;
+        }
+
+        body.light-mode p {
+            color: #333;
+        }
+
+        body.light-mode a {
+            color: #2a2f38;
+            border-color: #2a2f38;
+        }
+
+        body.light-mode a:hover {
+            background-color: #2a2f38;
+            color: white;
+        }
     </style>
 </head>
 <body>
+    <!-- Botón para cambiar modo -->
+    <button class="toggle-mode">Modo Oscuro</button>
+
     <!-- Contenido con estilo futurista -->
     <div class="scroll-anim">
         <h1>Intelliverse</h1>
         <p>En este proyecto escolar, os explicaré la historia de la Inteligencia Artificial y cómo afecta a nuestro día a día.</p>
+        <img src="https://via.placeholder.com/800x400" alt="Imagen IA futurista">
         <a href="https://github.com/tuusuario" target="_blank">Explora en GitHub</a>
     </div>
 
     <div class="scroll-anim">
         <h2>Visión del Futuro</h2>
         <p>El futuro está lleno de posibilidades. Mi objetivo es trabajar en proyectos que contribuyan a la evolución de la tecnología, desde inteligencia artificial hasta nuevas formas de interacción digital. Creo en un mundo donde la tecnología está al servicio de las personas.</p>
+        <img src="https://via.placeholder.com/800x400" alt="Visión futurista">
     </div>
 
     <div class="scroll-anim">
         <h2>Proyectos de Inteligencia Artificial</h2>
         <p>En mis proyectos recientes, he trabajado en algoritmos de aprendizaje automático, redes neuronales y procesamiento de lenguaje natural. Estas tecnologías están redefiniendo cómo interactuamos con el mundo digital y tienen el potencial de transformar industrias completas.</p>
         <p>Mi objetivo es seguir desarrollando herramientas y aplicaciones que hagan el uso de la IA más accesible para todos.</p>
+        <img src="https://via.placeholder.com/800x400" alt="Proyectos de IA">
         <a href="#proyectos" target="_blank">Ver más</a>
     </div>
 
     <div class="scroll-anim">
         <h2>Explorando el Desarrollo Web del Futuro</h2>
         <p>El desarrollo web está en constante cambio. Desde la creación de interfaces inmersivas hasta aplicaciones web que se sienten más como experiencias de software de escritorio, siempre estoy experimentando con las últimas tecnologías web.</p>
-        <p>Mis proyectos incluyen soluciones de realidad aumentada (AR), interfaces de usuario dinámicas y mucho más.</p>
+        <img src="https://via.placeholder.com/800x400" alt="Desarrollo web futurista">
     </div>
 
     <div class="scroll-anim">
         <h2>Últimos Artículos y Publicaciones</h2>
         <p>Comparto mis aprendizajes y descubrimientos a través de artículos técnicos y publicaciones. Algunos temas que he abordado recientemente incluyen blockchain, el metaverso y la computación cuántica.</p>
         <p>¡Explora mis últimas publicaciones y mantente actualizado con las tendencias tecnológicas del futuro!</p>
+        <img src="https://via.placeholder.com/800x400" alt="Publicaciones futuristas">
     </div>
 
     <footer>
         &copy; 2024 Tu Nombre | Hecho con ♥ en GitHub Pages
     </footer>
 
-    <!-- JavaScript para la animación de scroll -->
+    <!-- JavaScript para la animación de scroll y modo oscuro/claro -->
     <script>
         // Función que agrega la clase 'visible' o 'hidden' al hacer scroll
         function handleScroll() {
@@ -128,12 +188,10 @@
                 const sectionPosition = section.getBoundingClientRect().top;
                 const screenPosition = window.innerHeight / 1.3;
 
-                // Si la sección entra en la vista, agregar clase 'visible'
                 if (sectionPosition < screenPosition) {
                     section.classList.add('visible');
                     section.classList.remove('hidden');
                 } else {
-                    // Si la sección sale de la vista, agregar clase 'hidden'
                     section.classList.remove('visible');
                     section.classList.add('hidden');
                 }
@@ -143,6 +201,19 @@
         // Detectar el evento de scroll
         window.addEventListener('scroll', handleScroll);
         window.addEventListener('load', handleScroll);
+
+        // Función para alternar entre modo oscuro y claro
+        const toggleButton = document.querySelector('.toggle-mode');
+        toggleButton.addEventListener('click', function() {
+            document.body.classList.toggle('light-mode');
+            if (document.body.classList.contains('light-mode')) {
+                toggleButton.textContent = 'Modo Oscuro';
+                toggleButton.classList.add('light');
+            } else {
+                toggleButton.textContent = 'Modo Claro';
+                toggleButton.classList.remove('light');
+            }
+        });
     </script>
 </body>
 </html>
