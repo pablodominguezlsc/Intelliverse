@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Página personal o proyecto elegante y futurista">
-    <title>Intelliverse - Proyecto IA</title>
-
-    <!-- Importar Ginto Nord desde un servicio de fuentes o tu archivo local -->
-    <link href="https://fonts.googleapis.com/css2?family=Ginto+Nord:wght@400;700&display=swap" rel="stylesheet">
+    <title>Proyecto Futurista en GitHub</title>
     
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Ginto+Nord:wght@400;700&display=swap" rel="stylesheet">
+
     <!-- Estilos básicos -->
     <style>
         * {
@@ -17,44 +17,60 @@
             box-sizing: border-box;
         }
 
+        /* Fondo animado */
         body {
-            font-family: 'Ginto Nord', sans-serif; /* Asegúrate de que la fuente esté disponible */
+            font-family: 'Ginto Nord', sans-serif;
             line-height: 1.6;
-            background: linear-gradient(135deg, #101126, #2d2d5d, #3c3d55); /* Gradiente oscuro con toques de morado y azul */
+            background: linear-gradient(135deg, #101126, #2d2d5d, #3c3d55);
+            background-size: 400% 400%; /* Aumentar el tamaño del fondo para la animación */
+            animation: gradientAnimation 10s ease infinite; /* Animación del gradiente */
             color: #ffffff;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el 100% de la altura de la ventana */
-            overflow-x: hidden; /* Evita el desbordamiento horizontal */
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animación del gradiente */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         /* Estilos para el banner superior */
         .navbar {
-            background-color: rgba(30, 30, 47, 0.8); /* Color de fondo del banner con opacidad */
+            background-color: rgba(30, 30, 47, 0.8);
             padding: 10px 20px;
             display: flex;
             justify-content: center;
-            position: relative; /* Cambiar de sticky a relative */
-            z-index: 10; /* Asegura que el banner esté por encima */
+            position: relative;
+            z-index: 10;
         }
 
         .navbar a {
-            color: #ffffff; /* Color del texto */
+            color: #ffffff;
             text-decoration: none;
             font-weight: 700;
-            margin: 0 15px; /* Espaciado entre los enlaces */
+            margin: 0 15px;
             transition: color 0.3s;
             font-size: 1.1rem;
         }
 
         .navbar a:hover {
-            color: #00d1ff; /* Color al pasar el mouse */
+            color: #00d1ff;
         }
 
         /* Contenido principal */
         .main-content {
             padding: 40px;
-            flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
+            flex-grow: 1;
         }
 
         .content-section {
@@ -64,10 +80,10 @@
         }
 
         .content-section img {
-            max-width: 400px; /* Limitar el tamaño de las imágenes */
+            max-width: 400px;
             height: auto;
             border-radius: 10px;
-            margin: 20px; /* Margen alrededor de la imagen */
+            margin: 20px;
         }
 
         /* Clases para alternar la posición de las imágenes */
@@ -132,37 +148,28 @@
 <body>
     <!-- Banner superior -->
     <nav class="navbar" id="navbar">
-        <a href="#bienvenida">Bienvenida</a>
-        <a href="#vision">Historia</a>
-        <a href="#proyectos">Futuro</a>
+        <a href="index.html">Inicio</a>
+        <a href="#historia">Historia de la IA</a>
+        <a href="#tecnologia">Tecnología</a>
     </nav>
 
     <!-- Contenido principal -->
     <div class="main-content">
-        <div id="bienvenida" class="scroll-anim content-section right">
-            <img src="https://pixabay.com/illustrations/ai-generated-japan-lake-mountain-8612487/" alt="Imagen IA futurista">
+        <div id="historia" class="scroll-anim content-section right">
+            <img src="https://via.placeholder.com/400x300" alt="Historia de la IA">
             <div>
                 <h1>Intelliverse</h1>
-                <p>Bienvenido a Intelliverse, donde exploramos cómo la Inteligencia Artificial está cambiando el mundo. Descubre cómo afecta tu día a día y lo que depara el futuro.</p>
+                <p>En este proyecto escolar, os explicaré la historia de la Inteligencia Artificial y cómo afecta a nuestro día a día.</p>
                 <a href="https://github.com/tuusuario" target="_blank">Explora en GitHub</a>
             </div>
         </div>
 
-        <div id="vision" class="scroll-anim content-section left">
+        <div id="tecnologia" class="scroll-anim content-section left">
             <div>
-                <h2>Visión del Futuro</h2>
-                <p>La tecnología avanza rápidamente, desde inteligencia artificial hasta nuevas formas de interacción digital. Estamos aquí para explorar cómo podemos contribuir a su evolución.</p>
+                <h2>Tecnología detrás de la IA</h2>
+                <p>Las tecnologías que impulsan la IA incluyen algoritmos de aprendizaje automático, redes neuronales y procesamiento del lenguaje natural. Estas herramientas permiten a las máquinas aprender y adaptarse a situaciones complejas.</p>
             </div>
-            <img src="https://via.placeholder.com/400x300" alt="Visión futurista">
-        </div>
-
-        <div id="proyectos" class="scroll-anim content-section right">
-            <img src="https://via.placeholder.com/400x300" alt="Proyectos de IA">
-            <div>
-                <h2>Proyectos de Inteligencia Artificial</h2>
-                <p>En mis proyectos recientes, he trabajado en algoritmos de aprendizaje automático, redes neuronales y procesamiento de lenguaje natural. Estas tecnologías están redefiniendo cómo interactuamos con el mundo digital.</p>
-                <p>Mi objetivo es seguir desarrollando herramientas y aplicaciones que hagan el uso de la IA más accesible para todos.</p>
-            </div>
+            <img src="https://via.placeholder.com/400x300" alt="Tecnología de la IA">
         </div>
 
         <footer>
@@ -172,7 +179,6 @@
 
     <!-- JavaScript para animación de scroll -->
     <script>
-        // Animación de scroll
         const navbar = document.getElementById('navbar');
         let lastScrollTop = 0;
 
