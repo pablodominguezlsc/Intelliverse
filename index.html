@@ -23,39 +23,36 @@
             background-color: #101126; /* Fondo oscuro */
             color: #ffffff;
             display: flex;
-        }
-
-        /* Estilos para la barra lateral */
-        .sidebar {
-            width: 200px;
-            background-color: #1e1e2f;
-            padding: 20px;
-            display: flex;
             flex-direction: column;
-            position: fixed;
             height: 100vh;
-            overflow-y: auto;
         }
 
-        .sidebar a {
+        /* Estilos para el banner superior */
+        .navbar {
+            background-color: #1e1e2f;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-around;
+            position: relative;
+            z-index: 10; /* Asegura que el banner esté por encima */
+        }
+
+        .navbar a {
             color: #00d1ff;
-            padding: 10px;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-            margin-bottom: 10px;
+            font-weight: 700;
+            transition: color 0.3s;
         }
 
-        .sidebar a:hover {
-            background-color: #00d1ff;
-            color: #101126;
+        .navbar a:hover {
+            color: #ffffff; /* Color al pasar el mouse */
         }
 
         /* Contenido principal */
         .main-content {
-            margin-left: 220px; /* Espacio para la barra lateral */
             padding: 40px;
-            width: calc(100% - 220px);
+            overflow-y: auto; /* Permite el desplazamiento */
+            flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
         }
 
         h1, h2 {
@@ -104,22 +101,6 @@
             text-align: center;
         }
 
-        /* Estilos del botón de modo claro/oscuro */
-        .toggle-mode {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            background-color: #00d1ff;
-            border: none;
-            color: #101126;
-            font-family: 'Roboto', sans-serif;
-            cursor: pointer;
-            border-radius: 30px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            z-index: 10; /* Asegura que el botón esté por encima */
-        }
-
         /* Animaciones sutiles */
         .scroll-anim {
             opacity: 0;
@@ -135,21 +116,15 @@
     </style>
 </head>
 <body>
-    <!-- Barra lateral -->
-    <div class="sidebar">
-        <h2>Menú</h2>
+    <!-- Banner superior -->
+    <nav class="navbar">
         <a href="#bienvenida">Bienvenida</a>
         <a href="#vision">Visión del Futuro</a>
         <a href="#proyectos">Proyectos de IA</a>
-        <a href="#articulos">Artículos</a>
-        <a href="#contacto">Contacto</a>
-    </div>
+    </nav>
 
     <!-- Contenido principal -->
     <div class="main-content">
-        <!-- Botón de cambio de modo -->
-        <button class="toggle-mode">Modo Claro</button>
-
         <div id="bienvenida" class="scroll-anim">
             <h1>Intelliverse</h1>
             <p>Bienvenido a Intelliverse, donde exploramos cómo la Inteligencia Artificial está cambiando el mundo. Descubre cómo afecta tu día a día y lo que depara el futuro.</p>
@@ -170,18 +145,12 @@
             <img src="https://via.placeholder.com/800x400" alt="Proyectos de IA" style="max-width: 100%; height: auto; border-radius: 10px;">
         </div>
 
-        <div id="articulos" class="scroll-anim">
-            <h2>Últimos Artículos y Publicaciones</h2>
-            <p>Comparto mis aprendizajes y descubrimientos a través de artículos técnicos y publicaciones. Algunos temas que he abordado recientemente incluyen blockchain, el metaverso y la computación cuántica.</p>
-            <p>¡Explora mis últimas publicaciones y mantente actualizado con las tendencias tecnológicas del futuro!</p>
-        </div>
-
         <footer>
             &copy; 2024 Tu Nombre | Hecho con ♥ en GitHub Pages
         </footer>
     </div>
 
-    <!-- JavaScript para animación de scroll y cambio de modo claro/oscuro -->
+    <!-- JavaScript para animación de scroll -->
     <script>
         // Animación de scroll
         function handleScroll() {
@@ -195,13 +164,6 @@
                 }
             });
         }
-
-        // Cambiar entre modo claro y oscuro
-        const toggleButton = document.querySelector('.toggle-mode');
-        toggleButton.addEventListener('click', function() {
-            document.body.classList.toggle('dark-mode');
-            toggleButton.textContent = document.body.classList.contains('dark-mode') ? 'Modo Oscuro' : 'Modo Claro';
-        });
 
         window.addEventListener('scroll', handleScroll);
         window.addEventListener('load', handleScroll);
