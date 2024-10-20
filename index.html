@@ -17,15 +17,7 @@
             box-sizing: border-box;
         }
 
-        /* Estilo para el contenedor de partículas */
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
-
-        /* Fondo animado */
+        /* Fondo con gradiente */
         body {
             font-family: 'Ginto Nord', sans-serif;
             line-height: 1.6;
@@ -34,8 +26,16 @@
             flex-direction: column;
             min-height: 100vh;
             overflow-x: hidden;
-            position: relative; /* Necesario para que las partículas se sitúen correctamente */
-            background-color: #101126; /* Color de fondo oscuro */
+            position: relative;
+            background: linear-gradient(135deg, #101126, #181e30, #101126); /* Gradiente oscuro */
+        }
+
+        /* Estilo para el contenedor de partículas */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
         }
 
         /* Estilos para el banner superior */
@@ -65,8 +65,8 @@
         .main-content {
             padding: 40px;
             flex-grow: 1;
-            position: relative; /* Para asegurarnos de que el contenido esté por encima de las partículas */
-            z-index: 1; /* Z-index mayor para que el contenido esté visible sobre las partículas */
+            position: relative;
+            z-index: 1;
         }
 
         .content-section {
@@ -92,9 +92,9 @@
         }
 
         h1, h2 {
-            font-family: 'Ginto Nord', sans-serif; /* Fuente Ginto Nord */
+            font-family: 'Ginto Nord', sans-serif;
             font-weight: 700;
-            color: #ffffff;
+            color: #ffffff; /* Asegúrate de que los títulos sean visibles */
             margin-bottom: 20px;
             letter-spacing: 1px;
         }
@@ -111,7 +111,7 @@
             font-size: 1.2rem;
             margin-bottom: 20px;
             font-weight: 300;
-            color: #c7c7c7;
+            color: #c7c7c7; /* Color claro para el texto */
         }
 
         footer {
