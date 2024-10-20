@@ -7,7 +7,7 @@
     <title>Intelliverse - Proyecto IA</title>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Whitney:wght@300;400;700&display=swap" rel="stylesheet">
     
     <!-- Estilos básicos -->
     <style>
@@ -18,7 +18,7 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Whitney', sans-serif;
             line-height: 1.6;
             background-color: #101126; /* Fondo oscuro */
             color: #ffffff;
@@ -29,23 +29,26 @@
 
         /* Estilos para el banner superior */
         .navbar {
-            background-color: #1e1e2f;
-            padding: 15px 20px;
+            background-color: #1e1e2f; /* Color de fondo del banner */
+            padding: 10px 20px;
             display: flex;
-            justify-content: space-around;
-            position: relative;
+            justify-content: center;
+            position: sticky; /* Se mantiene fijo en la parte superior */
+            top: 0;
             z-index: 10; /* Asegura que el banner esté por encima */
         }
 
         .navbar a {
-            color: #00d1ff;
+            color: #ffffff; /* Color del texto */
             text-decoration: none;
             font-weight: 700;
+            margin: 0 15px; /* Espaciado entre los enlaces */
             transition: color 0.3s;
+            font-size: 1.1rem;
         }
 
         .navbar a:hover {
-            color: #ffffff; /* Color al pasar el mouse */
+            color: #00d1ff; /* Color al pasar el mouse */
         }
 
         /* Contenido principal */
@@ -75,23 +78,6 @@
             margin-bottom: 20px;
             font-weight: 300;
             color: #c7c7c7;
-        }
-
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            text-decoration: none;
-            font-size: 1rem;
-            color: #00d1ff;
-            border: 2px solid #00d1ff;
-            padding: 10px 20px;
-            border-radius: 30px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        a:hover {
-            background-color: #00d1ff;
-            color: #101126;
         }
 
         footer {
