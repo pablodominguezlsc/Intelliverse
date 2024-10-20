@@ -25,6 +25,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el 100% de la altura de la ventana */
+            overflow-x: hidden; /* Evita el desbordamiento horizontal */
         }
 
         /* Estilos para el banner superior */
@@ -53,7 +54,6 @@
         /* Contenido principal */
         .main-content {
             padding: 40px;
-            overflow-y: auto; /* Permite el desplazamiento */
             flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
         }
 
