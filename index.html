@@ -7,7 +7,7 @@
     <title>Proyecto Futurista en GitHub</title>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Estilos básicos -->
     <style>
@@ -18,24 +18,24 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            background-color: #2a2f38; /* Fondo oscuro */
+            background-color: #2a2f38; /* Fondo azul oscuro grisáceo */
             color: white;
             padding: 20px;
-            transition: background-color 0.5s ease, color 0.5s ease;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         h1, h2 {
-            font-family: 'Poppins', sans-serif; /* Fuente futurista más suave */
+            font-family: 'Orbitron', sans-serif; /* Fuente futurista */
             font-weight: 700;
-            color: #00d1ff; /* Color de texto */
+            color: #00d1ff; /* Color de texto futurista */
             margin-bottom: 20px;
             letter-spacing: 1px;
         }
 
         p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 20px;
             font-weight: 300;
             color: #c7c7c7;
@@ -55,14 +55,7 @@
 
         a:hover {
             background-color: #00d1ff;
-            color: #2a2f38;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
+            color: #2a2f38; /* Fondo oscuro en el hover */
         }
 
         footer {
@@ -72,12 +65,32 @@
             text-align: center;
         }
 
-        /* Animación mejorada para scroll */
+        /* Estilo para el modo claro */
+        .light-mode {
+            background-color: white;
+            color: #2a2f38;
+        }
+
+        .light-mode h1, .light-mode h2 {
+            color: #0073e6;
+        }
+
+        .light-mode a {
+            color: #0073e6;
+            border-color: #0073e6;
+        }
+
+        .light-mode a:hover {
+            background-color: #0073e6;
+            color: white;
+        }
+
+        /* Clases de animación para scroll */
         .scroll-anim {
             opacity: 0;
             transform: translateY(50px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-            margin-bottom: 40px;
+            margin-bottom: 40px; /* Espacio entre secciones */
         }
 
         .scroll-anim.visible {
@@ -90,59 +103,33 @@
             transform: translateY(50px);
         }
 
-        /* Estilos para el botón de modo claro/oscuro */
+        /* Estilos del botón para cambiar de modo */
         .toggle-mode {
             position: fixed;
             top: 20px;
             right: 20px;
-            background-color: #00d1ff;
-            color: #2a2f38;
-            border: none;
             padding: 10px 20px;
-            cursor: pointer;
+            background-color: #00d1ff;
+            border: none;
+            color: white;
             font-family: 'Poppins', sans-serif;
-            font-weight: 700;
+            cursor: pointer;
             border-radius: 5px;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        .toggle-mode.light {
-            background-color: #2a2f38;
-            color: #00d1ff;
-        }
-
-        /* Modo claro */
-        body.light-mode {
-            background-color: white;
-            color: #2a2f38;
-        }
-
-        body.light-mode h1, body.light-mode h2 {
-            color: #2a2f38;
-        }
-
-        body.light-mode p {
-            color: #333;
-        }
-
-        body.light-mode a {
-            color: #2a2f38;
-            border-color: #2a2f38;
-        }
-
-        body.light-mode a:hover {
-            background-color: #2a2f38;
-            color: white;
+        .light-mode .toggle-mode {
+            background-color: #0073e6;
         }
     </style>
 </head>
 <body>
-    <!-- Botón para cambiar modo -->
+    <!-- Botón de cambio de modo -->
     <button class="toggle-mode">Modo Claro</button>
 
     <!-- Contenido con estilo futurista -->
     <div class="scroll-anim">
-                <h1>Intelliverse</h1>
+        <h1>Intelliverse</h1>
         <p>En este proyecto escolar, os explicaré la historia de la Inteligencia Artificial y cómo afecta a nuestro día a día.</p>
         <img src="https://via.placeholder.com/800x400" alt="Imagen IA futurista">
         <a href="https://github.com/tuusuario" target="_blank">Explora en GitHub</a>
@@ -152,27 +139,6 @@
         <h2>Visión del Futuro</h2>
         <p>El futuro está lleno de posibilidades. Mi objetivo es trabajar en proyectos que contribuyan a la evolución de la tecnología, desde inteligencia artificial hasta nuevas formas de interacción digital. Creo en un mundo donde la tecnología está al servicio de las personas.</p>
         <img src="https://via.placeholder.com/800x400" alt="Visión futurista">
-    </div>
-
-    <div class="scroll-anim">
-        <h2>Proyectos de Inteligencia Artificial</h2>
-        <p>En mis proyectos recientes, he trabajado en algoritmos de aprendizaje automático, redes neuronales y procesamiento de lenguaje natural. Estas tecnologías están redefiniendo cómo interactuamos con el mundo digital y tienen el potencial de transformar industrias completas.</p>
-        <p>Mi objetivo es seguir desarrollando herramientas y aplicaciones que hagan el uso de la IA más accesible para todos.</p>
-        <img src="https://via.placeholder.com/800x400" alt="Proyectos de IA">
-        <a href="#proyectos" target="_blank">Ver más</a>
-    </div>
-
-    <div class="scroll-anim">
-        <h2>Explorando el Desarrollo Web del Futuro</h2>
-        <p>El desarrollo web está en constante cambio. Desde la creación de interfaces inmersivas hasta aplicaciones web que se sienten más como experiencias de software de escritorio, siempre estoy experimentando con las últimas tecnologías web.</p>
-        <img src="https://via.placeholder.com/800x400" alt="Desarrollo web futurista">
-    </div>
-
-    <div class="scroll-anim">
-        <h2>Últimos Artículos y Publicaciones</h2>
-        <p>Comparto mis aprendizajes y descubrimientos a través de artículos técnicos y publicaciones. Algunos temas que he abordado recientemente incluyen blockchain, el metaverso y la computación cuántica.</p>
-        <p>¡Explora mis últimas publicaciones y mantente actualizado con las tendencias tecnológicas del futuro!</p>
-        <img src="https://via.placeholder.com/800x400" alt="Publicaciones futuristas">
     </div>
 
     <footer>
@@ -208,10 +174,8 @@
             document.body.classList.toggle('light-mode');
             if (document.body.classList.contains('light-mode')) {
                 toggleButton.textContent = 'Modo Oscuro';
-                toggleButton.classList.add('light');
             } else {
                 toggleButton.textContent = 'Modo Claro';
-                toggleButton.classList.remove('light');
             }
         });
     </script>
