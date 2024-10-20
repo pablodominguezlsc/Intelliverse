@@ -1,0 +1,82 @@
+/* Reset de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos del cuerpo */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f7f7f7; /* Color de fondo */
+    color: #333; /* Color del texto */
+}
+
+/* Estilo de las secciones */
+section {
+    max-width: 800px; /* Ancho máximo de la sección */
+    margin: 0 auto; /* Centrar las secciones */
+    padding: 60px 20px; /* Espacio superior e inferior */
+    background-color: white; /* Color de fondo de las secciones */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    border-radius: 8px; /* Bordes redondeados */
+    opacity: 0; /* Inicialmente oculto para la animación */
+    transform: translateY(20px); /* Desplazamiento inicial para la animación */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transiciones suaves */
+    margin-bottom: 40px; /* Espacio entre secciones */
+}
+
+/* Estilos de los encabezados */
+h1, h2 {
+    font-family: 'Playfair Display', serif; /* Fuente serif para encabezados */
+    font-weight: 700; /* Negrita */
+    color: #333; /* Color del texto */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+/* Estilos de los párrafos */
+p {
+    font-size: 1.2rem; /* Tamaño del texto */
+    margin-bottom: 20px; /* Margen inferior */
+    font-weight: 300; /* Peso de fuente ligero */
+}
+
+/* Estilos de los enlaces */
+a {
+    display: inline-block; /* Para que el enlace tenga padding */
+    margin-top: 20px; /* Margen superior */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 1rem; /* Tamaño del texto del enlace */
+    color: #0073e6; /* Color del enlace */
+    border: 2px solid #0073e6; /* Bordes del enlace */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición suave al cambiar de color */
+}
+
+/* Estilo para el hover de los enlaces */
+a:hover {
+    background-color: #0073e6; /* Color de fondo al pasar el ratón */
+    color: white; /* Color del texto al pasar el ratón */
+}
+
+/* Estilo para el pie de página */
+footer {
+    margin: 40px 0; /* Espaciado en el pie de página */
+    font-size: 0.9rem; /* Tamaño del texto */
+    color: #999; /* Color del texto del pie de página */
+    text-align: center; /* Centrar texto */
+}
+
+/* Clases de animación para scroll */
+.scroll-anim {
+    opacity: 0; /* Inicialmente oculto para la animación */
+    transform: translateY(20px); /* Desplazamiento inicial */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transiciones suaves */
+}
+
+.scroll-anim.visible {
+    opacity: 1; /* Mostrar cuando se hace scroll */
+    transform: translateY(0); /* Sin desplazamiento */
+}
